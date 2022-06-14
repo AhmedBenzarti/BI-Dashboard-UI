@@ -1,0 +1,22 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">IsApproved</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let user of users">
+            <td>{{ user.username }}</td>
+            <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+            <td class="text-center">
+              <button class="btn btn-success btn-block" *ngIf="!user.isDisabled" (click)="approved(user.username)">Approved</button>
+              <button class="btn btn-danger btn-block" *ngIf="user.isDisabled" (click)="disabled(user.username)">Not Approved</button>
+            </td>
+           
+        </tbody>
+      </table>
+    </div>
+  </div>
