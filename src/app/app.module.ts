@@ -19,7 +19,7 @@ import { AuthService } from './service/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PowerBIEmbedModule, PowerBIReportEmbedComponent } from 'powerbi-client-angular';
-
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +30,15 @@ import { PowerBIEmbedModule, PowerBIReportEmbedComponent } from 'powerbi-client-
     HomeComponent,
     LoginComponent,
     ProfileComponent,
-    RegisterComponent                 
+    RegisterComponent,
+    NavbarComponent                 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    PowerBIEmbedModule,
     ReactiveFormsModule 
   ],
   providers: [ClientService,HttpClientModule, authInterceptorProviders, TokenStorageService, UserService, AuthService,PowerBIEmbedModule],

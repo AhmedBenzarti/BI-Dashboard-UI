@@ -1,9 +1,9 @@
 <div class="container">
-    {{location[0]}}
+<!-- 
     <div *ngIf="showAdminBoard">
       <app-board-admin></app-board-admin>
-    </div>
-    <div *ngIf="location[0] == 'bizert' && !showAdminBoard">
+    </div> -->
+    <div *ngIf="location[0] == 'bizert'">
       <app-user-bizert></app-user-bizert>
   </div>
   <div *ngIf="location[0] == 'tunis' && !showAdminBoard">

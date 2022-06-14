@@ -12,7 +12,7 @@ errorElement.className = 'status-img';
 errorElement.src = '/assets/error.svg';
 
 // Endpoint to get report config
-const reportUrl = 'https://aka.ms/CaptureViewsReportEmbedConfig';
+const reportUrl = '/assets/json.json';
 
 const errorClass = 'error';
 const successClass = 'success';
