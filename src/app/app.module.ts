@@ -20,10 +20,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PowerBIEmbedModule, PowerBIReportEmbedComponent } from 'powerbi-client-angular';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { routingComponents } from './app-routing.module';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    routingComponents,
     UserBizertComponent,
     UserTunisComponent,
     BoardAdminComponent,
@@ -31,7 +35,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    NavbarComponent                 
+    NavbarComponent,
+    SidebarComponent,
+    UsersComponent                 
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     PowerBIEmbedModule,
     ReactiveFormsModule 
   ],
-  providers: [ClientService,HttpClientModule, authInterceptorProviders, TokenStorageService, UserService, AuthService,PowerBIEmbedModule],
+  providers: [ClientService,HttpClientModule, authInterceptorProviders, TokenStorageService, UserService,UsersComponent, AuthService,PowerBIEmbedModule],
   bootstrap: [AppComponent,PowerBIReportEmbedComponent]
 })
 export class AppModule { }
