@@ -36,8 +36,7 @@ import { UsersComponent } from './users/users.component';
     ProfileComponent,
     RegisterComponent,
     NavbarComponent,
-    SidebarComponent,
-    UsersComponent                 
+    SidebarComponent,               
   ],
   imports: [
     BrowserModule,
@@ -47,7 +46,7 @@ import { UsersComponent } from './users/users.component';
     PowerBIEmbedModule,
     ReactiveFormsModule 
   ],
-  providers: [ClientService,HttpClientModule, authInterceptorProviders, TokenStorageService, UserService,UsersComponent, AuthService,PowerBIEmbedModule],
+  providers: [ClientService,HttpClientModule, authInterceptorProviders, TokenStorageService, UserService, AuthService,PowerBIEmbedModule],
   bootstrap: [AppComponent,PowerBIReportEmbedComponent]
 })
 export class AppModule { }
