@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './service/auth.service';
 import { TokenStorageService } from './service/token-storage.service';
 
 // Handles the embed config response for embedding
@@ -16,35 +17,50 @@ export interface ConfigResponse {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private roles: string[] = [];
+  form: any = {
+    username: null,
+    password: null
+  };
   isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
-  username?: string;
-  balance: any;
-  location: any;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+  location: string | null = "";
 
-  constructor(private tokenStorageService: TokenStorageService,  private router: Router) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
-
-    if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
-      
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-      console.log("User", user);
-      this.username = user.username;
-      
-      
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
     }
   }
 
-  logout(): void {
-    this.tokenStorageService.signOut();
-    this.router.navigate(['/login']);
+  onSubmit(): void {
+    const { username, password } = this.form;
+
+    this.authService.login(username, password).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+        this.tokenStorage.saveLocation(data.location);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.location = this.tokenStorage.getLocation();
+        console.log("location:",this.location);
+        this.reloadPage();
+      },
+      err => {
+        //this.errorMessage = "Nom ou mot de pass incorrect";
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
+  reloadPage(): void {
     window.location.reload();
+    //this.router.navigate(['/login']);
   }
 }

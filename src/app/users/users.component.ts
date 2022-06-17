@@ -23,6 +23,7 @@ export class UsersComponent implements OnInit {
     );
 
     this.userService.findAll().subscribe(data => {
+      console.log(data)
       this.users = data;
     });
   }

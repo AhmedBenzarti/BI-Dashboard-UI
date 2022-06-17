@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
@@ -23,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { routingComponents } from './app-routing.module';
 import { UsersComponent } from './users/users.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -36,9 +36,11 @@ import { UsersComponent } from './users/users.component';
     ProfileComponent,
     RegisterComponent,
     NavbarComponent,
-    SidebarComponent,               
+    SidebarComponent,  
+    UsersComponent             
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -46,7 +48,7 @@ import { UsersComponent } from './users/users.component';
     PowerBIEmbedModule,
     ReactiveFormsModule 
   ],
-  providers: [ClientService,HttpClientModule, authInterceptorProviders, TokenStorageService, UserService, AuthService,PowerBIEmbedModule],
+  providers: [ClientService,HttpClientModule, authInterceptorProviders, UsersComponent,TokenStorageService, UserService, AuthService,PowerBIEmbedModule],
   bootstrap: [AppComponent,PowerBIReportEmbedComponent]
 })
 export class AppModule { }
