@@ -21,10 +21,8 @@
       <td class="text-center">{{ user.name }}</td>
       <td class="text-center">{{ user.username }}</td>
       <td class="text-center"><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
-      <td class="text-center">
-        <a *ngIf="!user.isDisabled" (click)="approved(user.username)">Approved</a>
-        <a *ngIf="user.isDisabled" (click)="approved(user.username)">Not Approved</a>
-      </td>
+      <td class="text-center"><a href="mailto:{{ user.email }}">{{ user.nu }}</a></td>
+     
      
   </tbody>
 

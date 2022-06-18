@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "powerbi-report-authoring"
+           ],
             "outputPath": "dist/bi-dashboard-ui",
             "index": "src/index.html",
             "main": "src/main.ts",

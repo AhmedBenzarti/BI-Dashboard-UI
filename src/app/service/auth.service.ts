@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Roles } from '../register/roles';
 
 const AUTH_API = 'http://localhost:8083/api/auth/';
 
@@ -19,11 +20,22 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(username: string | null, email: string | null, password: string | null): Observable<any> {
+  register(username: string | null, name: string |null, email: string | null, tel: string | null, role: string  , password: string | null, location: string |null): Observable<any> {
+    console.log("tel",tel)
+    console.log("role",role)
+    let numtel = tel;
+    let setRole: Set<string> = new Set<string>();
+    setRole.add(role)
+    console.log("tel",numtel)
+    console.log("role",setRole)
     return this.http.post(AUTH_API + 'signup', {
       username,
+      name,
       email,
-      password
+      numtel,
+      setRole,
+      password,
+      location
     }, httpOptions);
   }
 } 

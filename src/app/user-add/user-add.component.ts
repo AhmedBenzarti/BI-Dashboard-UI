@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Form } from '../model/form';
+import { Countrys } from '../register/countrys';
+import { Roles } from '../register/roles';
 import { AuthService } from '../service/auth.service';
-import { Countrys } from './countrys';
-import { Roles } from './roles';
+import { UserService } from '../service/user.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-user-add',
+  templateUrl: './user-add.component.html',
+  styleUrls: ['./user-add.component.scss']
 })
-
-export class RegisterComponent implements OnInit {
+export class UserAddComponent implements OnInit {
   form1: FormGroup ;
   form: Form = new Form();
   isSuccessful = false;

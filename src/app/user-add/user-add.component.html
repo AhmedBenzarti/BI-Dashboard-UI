@@ -1,110 +1,18 @@
-<!-- <div class="col-md-16">
-    <div class="card card-container">
-      <div class="imgcontainer">
-        <img src="../assets/images/avatare.jpg" alt="Avatar" class="avatar">
-      </div>
-      <form
-        *ngIf="!isSuccessful"
-        name="form"
-        (ngSubmit)="f.form.valid && onSubmit()"
-        #f="ngForm"
-        novalidate
-      >
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            [(ngModel)]="form.username"
-            required
-            minlength="3"
-            maxlength="20"
-            #username="ngModel"
-          />
-          <div class="alert-danger" *ngIf="username.errors && f.submitted">
-            <div *ngIf="username.errors['required']">Username is required</div>
-            <div *ngIf="username.errors['minlength']">
-              Username must be at least 3 characters
-            </div>
-            <div *ngIf="username.errors['maxlength']">
-              Username must be at most 20 characters
-            </div>
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            [(ngModel)]="form.email"
-            required
-            email
-            #email="ngModel"
-          />
-          <div class="alert-danger" *ngIf="email.errors && f.submitted">
-            <div *ngIf="email.errors['required']">Email is required</div>
-            <div *ngIf="email.errors['email']">
-              Email must be a valid email address
-            </div>
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            [(ngModel)]="form.password"
-            required
-            minlength="6"
-            #password="ngModel"
-          />
-          <div class="alert-danger" *ngIf="password.errors && f.submitted">
-            <div *ngIf="password.errors['required']">Password is required</div>
-            <div *ngIf="password.errors['minlength']">
-              Password must be at least 6 characters
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block">Sign Up</button>
-        </div>
-  
-        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-          Signup failed!<br />{{ errorMessage }}
-        </div>
-      </form>
-  
-      <div class="alert alert-success" *ngIf="isSuccessful">
-        Your registration is successful! Please wait for the approval.
-      </div>
-    </div>
-  </div> -->
-
-
-
-  <body>
-
-    <main>
-      <div class="container">
-  
+<div class="dash">
+    <h1>User Management</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">User Management</a></li>
+        <li class="breadcrumb-item active">Add Users</li>
+      </ol>
+    </nav>
+<!-- 
         <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
           <div class="container">
             <div class="row justify-content-center">
-              <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+              <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center"> -->
   
-                <div class="d-flex justify-content-center py-4">
-                  <a href="https://www.agil.com.tn/fr/" class="logo d-flex align-items-center w-auto">
-                    <img src="assets/images/logo.png" alt="">
-                    <span class="d-none d-lg-block">Agil</span>
-                  </a>
-                </div>
+
 
                 <form
                 *ngIf="!isSuccessful"
@@ -264,34 +172,27 @@
                         <label class="col-sm-2 col-form-label">Type</label>
                         <div class="col-12">
                           <select class="form-select" [(ngModel)]="form.role" name="role">
-                            <option *ngFor="let role of roles; let i = index" [value]="roles[i].code">
+                            <option *ngFor="let role of roles; let i = index" [value]="roles[i].name">
                               {{roles[i].name}}
                             </option>
                           </select>
                         </div>
                       </div>
-
-                      
                       <div class="col-12">
-                        <div class="form-check">
-                          <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                          <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                          <div class="invalid-feedback">You must agree before submitting.</div>
+                        <label class="col-sm-2 col-form-label"></label>
                         </div>
-                      </div>
-                      <div class="col-12">
+                      <div class="col-12 ">
                         <button class="btn btn-primary w-100" type="submit ">Create Account</button>
                       </div>
-                      <div class="col-12">
-                        <p class="small mb-0">Already have an account? <a href="/login">Log in</a></p>
-                      </div>
+
                     </div>
                     </div>
                   </div>
                 </form>
               </div>
-            </div>
+            <!-- </div>
           </div>
-        </section>
-      </div>
-    </main>
+        </section> -->
+
+<!-- 
+    </div> -->
