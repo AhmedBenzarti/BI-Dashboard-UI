@@ -27,8 +27,8 @@ export class RegisterComponent implements OnInit {
   constructor(private authService: AuthService,private formBuilder: FormBuilder) {
 
     this.form1 = this.formBuilder.group({
-      roles: [{name: 'Administrateur', code: 'admin'},
-      {name: 'Utilisateur', code: 'user'},],
+      roles: [{name: 'Administrateur', code: 'ROLE_ADMIN'},
+      {name: 'Utilisateur', code: 'ROLE_USER'},],
       countrys: [{name: 'Tunis'},
       {name: 'bizert'},]
     });

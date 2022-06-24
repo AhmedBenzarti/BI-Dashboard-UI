@@ -1,9 +1,9 @@
 <div class="dash">
-  <h1>User Management</h1>
+  <h1>Gestion des utilisateurs</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">User Management</a></li>
-      <li class="breadcrumb-item active">List des Users</li>
+      <li class="breadcrumb-item"><a href="index.html">Gestion des utilisateurs</a></li>
+      <li class="breadcrumb-item active">Liste des utilisateurs</li>
     </ol>
   </nav>
 </div>
@@ -14,14 +14,16 @@
         <th scope="col" class="text-center">Nom</th>
         <th scope="col" class="text-center">Prénom</th>
         <th scope="col" class="text-center">Email</th>
-        <th scope="col" class="text-center">IsApproved</th>
+        <th scope="col" class="text-center">location</th>
+        <th scope="col" class="text-center">Numéro Tel</th>
       </tr>
     </thead>
     <tbody *ngFor="let user of users">
       <td class="text-center">{{ user.name }}</td>
       <td class="text-center">{{ user.username }}</td>
       <td class="text-center"><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
-      <td class="text-center"><a href="mailto:{{ user.email }}">{{ user.nu }}</a></td>
+      <td class="text-center"><a href="mailto:{{ user.location }}">{{ user.location }}</a></td>
+      <td class="text-center"><a href="mailto:{{ user.numTel }}">{{ user.numTel }}</a></td>
      
      
   </tbody>

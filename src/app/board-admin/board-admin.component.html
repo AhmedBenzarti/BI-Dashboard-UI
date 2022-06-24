@@ -31,10 +31,32 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">GLOBAL</li>
         </ol>
       </nav>
     </div>
+
+    
+
+<div class="controls" *ngIf="isEmbedded; else embedReportFlow">
+  <button (click)="deleteVisual()">Delete Visual</button>
+  <button (click)="hideFilterPane()">Hide Filter Pane</button>
+  <button (click)="setDataSelectedEvent()">Set Event</button>
+  <div class="display-message" #status>{{ displayMessage }}</div>
+</div>
+<ng-template #embedReportFlow>
+  <div class="display-message position" #status>
+    <label>{{ displayMessage }}</label>
+  </div>
+  <div class="embed-report">
+    <button (click)="embedReport()" id="embed-action" #embedReportBtn>Embed Report</button>
+  </div>
+  <div class="separator"></div>
+</ng-template>
+
+<powerbi-report [embedConfig]="reportConfig" [cssClassName]="reportClass" [phasedEmbedding]="phasedEmbeddingFlag" [eventHandlers]="eventHandlersMap">
+</powerbi-report>
+
     <app-user-tunis></app-user-tunis>
     <app-user-bizert></app-user-bizert>
     <!-- End Table with stripped rows -->

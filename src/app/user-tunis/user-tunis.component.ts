@@ -3,7 +3,7 @@ import { IHttpPostMessageResponse } from 'http-post-message';
 import { IReportEmbedConfiguration, models, Page, Report, service, VisualDescriptor } from 'powerbi-client';
 import { PowerBIReportEmbedComponent } from 'powerbi-client-angular';
 import 'powerbi-report-authoring';
-import { errorClass, errorElement, hidden, position, reportUrl, successClass, successElement } from '../../constants';
+import { errorClass, errorElement, hidden, position, reportUrl, successClass, successElement } from '../../constants-charguia';
 import { HttpService } from '../service/http.service';
 
 // Handles the embed config response for embedding
