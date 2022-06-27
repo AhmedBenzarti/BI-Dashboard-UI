@@ -22,6 +22,8 @@ import { routingComponents } from './app-routing.module';
 import { UsersComponent } from './users/users.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { UserAddComponent } from './user-add/user-add.component';
+import { ModifierUserComponent } from './modifier-user/modifier-user.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { UserAddComponent } from './user-add/user-add.component';
     RegisterComponent,
     NavbarComponent,
     SidebarComponent,  
-    UsersComponent, UserAddComponent             
+    UsersComponent, UserAddComponent, ModifierUserComponent, DeleteUserComponent             
   ],
   imports: [
     

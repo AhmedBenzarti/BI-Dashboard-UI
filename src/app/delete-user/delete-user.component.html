@@ -1,0 +1,35 @@
+<div class="dash">
+    <h1>Gestion des utilisateurs</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Gestion des utilisateurs</a></li>
+        <li class="breadcrumb-item active">Supprimer de utilisateur</li>
+      </ol>
+    </nav>
+  </div>
+   <div> <!-- Table with stripped rows -->
+   <table class="table datatable">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Nom</th>
+          <th scope="col" class="text-center">Prénom</th>
+          <th scope="col" class="text-center">Email</th>
+          <th scope="col" class="text-center">location</th>
+          <th scope="col" class="text-center">Numéro Tel</th>
+          <th scope="col" class="text-center">Delete</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let user of users">
+        <td class="text-center">{{ user.name }}</td>
+        <td class="text-center">{{ user.username }}</td>
+        <td class="text-center"><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+        <td class="text-center"><a href="mailto:{{ user.location }}">{{ user.location }}</a></td>
+        <td class="text-center"><a href="mailto:{{ user.numTel }}">{{ user.numTel }}</a></td>
+        <td class="text-center"><button   (click)="approved(user.username)">  Delete </button></td>
+       
+       
+    </tbody>
+  
+    </table>
+  </div>
+  
